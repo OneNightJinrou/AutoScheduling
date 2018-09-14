@@ -25,11 +25,11 @@ export default class Top extends Component<Props> {
         </Content>
         <Footer>
           <FooterTab>
-            <Button vertical onPress={() => this.props.navigation.push('Top')}>
+            <Button vertical onPress={() => this.props.navigation.navigate('Top')}>
               <Icon name="apps" />
               <Text>Apps</Text>
             </Button>
-            <Button vertical onPress={() => this.props.navigation.push('Create')}>
+            <Button vertical onPress={() => this.props.navigation.navigate('Create')}>
               <Icon name="camera" />
               <Text>Camera</Text>
             </Button>
