@@ -13,8 +13,18 @@ const RootNavigator = createStackNavigator({
 
 const MyFooter = createBottomTabNavigator(
     {
-        Top: { screen: Top },
-        Create: { screen: Create },
+        Top: {
+            screen: Top,
+            navigationOptions: {
+                tabBarLabel: 'マイシフト',
+            }
+        },
+        Create: {
+            screen: Create,
+            navigationOptions: {
+                tabBarLabel: 'シフト作成',
+            }
+        },
     },
     {
         initialRouteName: 'Top',
