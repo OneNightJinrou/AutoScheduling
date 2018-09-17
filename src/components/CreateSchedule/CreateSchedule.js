@@ -3,7 +3,7 @@ import {Platform, StyleSheet, View} from 'react-native';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text} from 'native-base';
 
 type Props = {};
-export default class Create extends Component<Props> {
+export default class CreateSchedule extends Component<Props> {
   render() {
     return (
       <Container>
@@ -20,7 +20,7 @@ export default class Create extends Component<Props> {
         </Header>
         <Content>
           <Text>
-            This is Create
+            This is CreateSchedule
           </Text>
         </Content>
       </Container>

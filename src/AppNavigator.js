@@ -3,8 +3,8 @@ import { createStackNavigator, TabNavigator, TabBarBottom } from 'react-navigati
 import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text} from 'native-base';
 
-import Top from './Top';
-import Create from './Create';
+import Top from './components/Top/Top';
+import Create from './components/CreateSchedule/CreateSchedule';
 
 const RootNavigator = createStackNavigator({
   Top: { screen: Top },
