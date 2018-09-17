@@ -22,17 +22,15 @@ const MyFooter = createBottomTabNavigator(
             tabBarIcon: ({ focused, tintColor }) => {
               const { routeName } = navigation.state;
               let iconName;
-              if (routeName === 'Home') {
-                iconName = 'apps';
-              } else if (routeName === 'Settings') {
-                iconName = 'camera';
+              if (routeName === 'Top') {
+                iconName = 'calendar';
+              } else if (routeName === 'Create') {
+                iconName = 'calendar-plus-o';
               }
       
               // You can return any component that you like here! We usually use an
               // icon component from react-native-vector-icons
-            //   return <Ionicons name={iconName} size={25} color={tintColor} />;
-            //   return <Icon name={iconName} size={25} color={tintColor}/>
-              return <Text>aaa</Text>
+              return <Icon type='FontAwesome' name={iconName} style={{color: tintColor}}/>
             },
         }),
         tabBarOptions: {

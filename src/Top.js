@@ -23,26 +23,6 @@ export default class Top extends Component<Props> {
             This is Top
           </Text>
         </Content>
-        <Footer>
-          <FooterTab>
-            <Button vertical onPress={() => this.props.navigation.navigate('Top')}>
-              <Icon name="apps" />
-              <Text>Apps</Text>
-            </Button>
-            <Button vertical onPress={() => this.props.navigation.navigate('Create')}>
-              <Icon name="camera" />
-              <Text>Camera</Text>
-            </Button>
-            <Button vertical active onPress = {()=>console.warn("Navigate pressed!")}>
-              <Icon active name="navigate" />
-              <Text>Navigate</Text>
-            </Button>
-            <Button vertical onPress = {()=>console.warn("person pressed!")}>
-              <Icon name="person" />
-              <Text>Contact</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
 
     );
