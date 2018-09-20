@@ -10,7 +10,8 @@
     "native-base": "^2.8.0",
     "react": "16.5.0",
     "react-native": "0.57.0",
-    "react-navigation": "^2.14.2"
+    "react-navigation": "^2.14.2",
+    "rn-viewpager": "^1.2.9"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
