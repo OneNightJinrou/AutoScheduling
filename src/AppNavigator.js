@@ -4,54 +4,68 @@ import { createBottomTabNavigator, BottomTabBar } from 'react-navigation-tabs';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text} from 'native-base';
 
 import Top from './components/Top/Top';
-import Create from './components/CreateSchedule/CreateSchedule';
+import CreateSchedule from './components/CreateSchedule/CreateSchedule';
+import SettingWorker from './components/CreateSchedule/SettingWorker';
+import SettingWorkingForm from './components/CreateSchedule/SettingWorkingForm';
 
-const RootNavigator = createStackNavigator({
-  Top: { screen: Top },
-  Create: { screen: Create },
+const CreateScheduleNavigator = createStackNavigator(
+{
+  CreateSchedule: { screen: CreateSchedule },
+  SettingWorker: { screen: SettingWorker },
+  SettingWorkingForm: { screen: SettingWorkingForm },
+}, {
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: '#fff',
+    },
+    headerTintColor: '#f4511e',
+    // headerTitleStyle: {
+    //   fontWeight: 'bold',
+    // },
+  }
 });
 
-const MyFooter = createBottomTabNavigator(
-    {
-        Top: {
-            screen: Top,
-            navigationOptions: {
-                tabBarLabel: 'マイシフト',
-            }
-        },
-        Create: {
-            screen: Create,
-            navigationOptions: {
-                tabBarLabel: 'シフト作成',
-            }
-        },
+const MyTabNavigator = createBottomTabNavigator(
+  {
+    Top: {
+      screen: Top,
+      navigationOptions: {
+          tabBarLabel: 'マイシフト',
+      }
     },
-    {
-        initialRouteName: 'Top',
-        navigationOptions: ({ navigation }) => ({
-            tabBarIcon: ({ focused, tintColor }) => {
-              const { routeName } = navigation.state;
-              let iconName;
-              if (routeName === 'Top') {
-                iconName = 'calendar';
-              } else if (routeName === 'Create') {
-                iconName = 'calendar-plus-o';
-              }
-      
-              // You can return any component that you like here! We usually use an
-              // icon component from react-native-vector-icons
-              return <Icon type='FontAwesome' name={iconName} style={{color: tintColor}}/>
-            },
-        }),
-        tabBarOptions: {
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
-            // activeBackgroundColor: '#5ab4bd',
-            // inactiveBackgroundColor: '#ffffff',
-            // style: { borderTopWidth: 2, borderTopColor: '#5ab4bd' },
+    Create: {
+      screen: CreateScheduleNavigator,
+      navigationOptions: {
+          tabBarLabel: 'シフト作成',
+      }
+    },
+  },
+  {
+    initialRouteName: 'Top',
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === 'Top') {
+          iconName = 'calendar';
+        } else if (routeName === 'Create') {
+          iconName = 'calendar-plus-o';
         }
+
+        // You can return any component that you like here! We usually use an
+        // icon component from react-native-vector-icons
+        return <Icon type='FontAwesome' name={iconName} style={{color: tintColor}}/>
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+      // activeBackgroundColor: '#5ab4bd',
+      // inactiveBackgroundColor: '#ffffff',
+      // style: { borderTopWidth: 2, borderTopColor: '#5ab4bd' },
     }
+  }
 );
 
 
-export { RootNavigator, MyFooter };
+export { CreateScheduleNavigator, MyTabNavigator };

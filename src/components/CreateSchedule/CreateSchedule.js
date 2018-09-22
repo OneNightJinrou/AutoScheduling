@@ -2,29 +2,24 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, View} from 'react-native';
 import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text} from 'native-base';
 
-type Props = {};
-export default class CreateSchedule extends Component<Props> {
+export default class CreateSchedule extends Component {
+  static navigationOptions = ({ navigation, navigationOptions }) => {
+    return {
+      title: 'シフト作成',
+      headerStyle: {
+        backgroundColor: navigationOptions.headerTintColor,
+      },
+      headerTintColor: navigationOptions.headerStyle.backgroundColor,
+    };
+  };
   render() {
     return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content>
-          <Text>
-            This is CreateSchedule
-          </Text>
-        </Content>
-      </Container>
-
+      <View>
+        <Button
+          onPress={() => this.props.navigation.navigate('SettingWorker')}>
+          <Text>Go to SettingWorker</Text>
+        </Button>
+      </View>
     );
   }
 }
