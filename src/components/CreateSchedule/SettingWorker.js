@@ -94,6 +94,7 @@ export default class SettingWorker extends Component {
       return
     }
     this.setState({ nextPageErrorMessage: '' });
+    global.POST_SETTING.workerList = this.state.workerList;
     this.props.navigation.navigate('SettingWorkingForm')
   };
 
