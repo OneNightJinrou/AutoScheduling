@@ -30,7 +30,7 @@ export default class SettingWorkingForm extends Component {
         <Text>
           This is SettingWorkingForm.
           日勤、準夜勤、夜勤、休みで入力したものとする。
-          入力フォームは後日対応。a
+          入力フォームは後日対応。
         </Text>
         {/* 次ページへの遷移 */}
         <Button
