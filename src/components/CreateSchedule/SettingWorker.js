@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, View, ScrollView} from 'react-native';
-import { Container, Toast } from "native-base";
-import { FormLabel, FormInput, FormValidationMessage, Text, Button, List, ListItem} from 'react-native-elements'
+import { FormLabel, FormInput, FormValidationMessage, Text, Button, List, ListItem} from 'react-native-elements';
 
 export default class SettingWorker extends Component {
   constructor(props) {

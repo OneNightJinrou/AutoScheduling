@@ -7,12 +7,14 @@ import Top from './components/Top/Top';
 import CreateSchedule from './components/CreateSchedule/CreateSchedule';
 import SettingWorker from './components/CreateSchedule/SettingWorker';
 import SettingWorkingForm from './components/CreateSchedule/SettingWorkingForm';
+import SettingDate from './components/CreateSchedule/SettingDate';
 
 const CreateScheduleNavigator = createStackNavigator(
 {
   CreateSchedule: { screen: CreateSchedule },
   SettingWorker: { screen: SettingWorker },
   SettingWorkingForm: { screen: SettingWorkingForm },
+  SettingDate: { screen: SettingDate},
 }, {
   navigationOptions: {
     headerStyle: {
