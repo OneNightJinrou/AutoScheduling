@@ -8,7 +8,7 @@ export default class SettingDate extends Component {
     super(props);
     // console.warn(POST_SETTING)
     this.state = {
-      selected: {},
+      markedDates: {},
     };
   }
 
@@ -17,17 +17,17 @@ export default class SettingDate extends Component {
   };
 
   onDayPress(day) {
-    let selected = this.state.selected;
-    if (day.dateString in selected) {
-      delete selected[day.dateString]
+    let markedDates = this.state.markedDates;
+    if (day.dateString in markedDates) {
+      delete markedDates[day.dateString]
     } else {
-      selected[day.dateString] = {selected: true, selectedDotColor: 'orange'}
+      markedDates[day.dateString] = {selected: true, selectedDotColor: 'orange'}
     }
 
     // オブジェクトのディープコピーの為にシリアライズしてからデシリアライズ（ディープコピーしないと画面描画されない）
-    const updatedSelect = JSON.parse(JSON.stringify(selected));
+    const updatedMarkedDates = JSON.parse(JSON.stringify(markedDates));
     this.setState({
-      selected: updatedSelect
+      markedDates: updatedMarkedDates
     });
   }
 
@@ -39,7 +39,7 @@ export default class SettingDate extends Component {
         </Text>
         <Calendar
           onDayPress={this.onDayPress.bind(this)}
-          markedDates={this.state.selected}
+          markedDates={this.state.markedDates}
         />
       </View>
     );
